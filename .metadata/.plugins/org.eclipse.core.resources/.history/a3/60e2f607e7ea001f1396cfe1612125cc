@@ -1,0 +1,15 @@
+package Thirdclass;
+
+public class fivthclass {
+	
+	public static void main(String[] args) {
+		
+		fivthclass cls=new fivthclass(); 
+		cls.facorialnumber();
+        
+	}
+	 void facorialnumber() { 
+			System.out.print("hello world");
+			
+		}
+}

@@ -1,0 +1,44 @@
+package Fivthclass_forloop_whileloop1;
+
+import java.util.Scanner;
+
+public class fivthclass_forloop_whileloop {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+        // Input a number
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+
+        int count=0; // Assume the number is prime
+
+        // Prime check logic using for loop
+        if (num <= 1) {
+            //isPrime = false; // 0 and 1 are not prime
+        } else {
+//            for (int i = 2; i < num; i++) { // Loop from 2 to num-1
+//                if (num % i == 0) {
+//                    count =count+1;// If divisible, it's not prime
+//                    //break; // Exit loop early 
+//                    System.out.print(count);
+//                }
+//            } 
+        	 for (int i = 2; i <= num / 2; i++) { // Loop up to num/2 for efficiency
+                 if (num % i == 0) {
+                     count=count+1; // Increase count if divisible
+                     System.out.print(i + " "); // Print the divisor (for debugging)
+                 }
+             }
+        }
+
+        // Output result
+        if (count==0) {
+            System.out.println(num + " is a prime number.");
+        } else {
+            System.out.println(num + " is not a prime number.");
+        }
+
+	}
+
+}

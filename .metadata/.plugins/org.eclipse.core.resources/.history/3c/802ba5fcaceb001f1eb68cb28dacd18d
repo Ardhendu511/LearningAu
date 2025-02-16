@@ -1,0 +1,49 @@
+package amaonone;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class amazon {  
+	//@SuppressWarnings("unlikely-arg-type")
+	@Test(priority=1)
+	public void browserlucnh() throws InterruptedException { 
+		ChromeDriver  driver=new ChromeDriver(); 
+		Thread.sleep(1000); 
+		System.out.print(" 1");
+		 String Lunchurl="https://www.facebook.com/";  
+		 System.out.print("2");
+		 Thread.sleep(1000); 
+		 System.out.print("3");
+		driver.get("Lunchurl"); 
+		System.out.print("4");
+		Thread.sleep(1000); 
+		System.out.print("5");
+		driver.manage().window().maximize();    
+		System.out.print("6");
+		Thread.sleep(1000); 
+		System.out.print("7");
+		String finalurl=driver.getCurrentUrl();  
+		System.out.print("8");
+		Thread.sleep(1000); 
+		System.out.print("9");
+		System.out.println(finalurl); 
+		System.out.print("10");
+		Thread.sleep(1000);
+		if(Lunchurl.endsWith(finalurl)) 
+		{
+			 System.out.print("my test case is passed");
+		} 
+		else {
+			 System.out.println(" my test cases is failed");
+		} 
+		Thread.sleep(2000);
+		driver.quit();
+	    
+		
+			
+		}
+		
+	
+}

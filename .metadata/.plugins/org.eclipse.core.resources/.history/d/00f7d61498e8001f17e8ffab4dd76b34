@@ -1,0 +1,15 @@
+package Thirdclass;
+
+public class Thirdclass { 
+	
+	public static void main(String[] args)
+	{
+		Thirdclass sc=new Thirdclass();
+		sc.add(19, 90);
+	} 
+public void add(int a, int b) {
+	 System.out.println(a+b);
+}
+	
+
+}

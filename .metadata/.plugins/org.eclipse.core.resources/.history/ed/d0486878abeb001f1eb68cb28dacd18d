@@ -1,0 +1,44 @@
+package amaonone;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class amazon {  
+	@SuppressWarnings("unlikely-arg-type")
+	@Test(priority=1)
+	public void browserlucnh() throws InterruptedException { 
+		ChromeDriver driver=new ChromeDriver(); 
+		FirefoxDriver driver1=new FirefoxDriver(); 
+		EdgeDriver   driver2=new  EdgeDriver();
+		String Chromedriver="Chrome"; 
+		String Firefoxbrowser="firefox"; 
+		String Edgebrowser="EdgeDriver";
+		if(Chromedriver.equals(driver)) 
+		{  
+			Thread.sleep(1000);	
+			driver.manage().window().maximize(); 
+			Thread.sleep(1000);		 
+			driver.get("https://www.amazon.in/?&tag=googhydrabk1-21&ref=pd_sl_5szpgfto9i_e&adgrpid=155259813593&hvpone=&hvptwo=&hvadid=674893540034&hvpos=&hvnetw=g&hvrand=5423738545302553772&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9062010&hvtargid=kwd-64107830&hydadcr=14452_2316413&gad_source=1");
+			
+		} 
+		else if (Firefoxbrowser.equals(driver1)) {   
+			Thread.sleep(1000);	
+			driver.manage().window().maximize(); 
+			Thread.sleep(1000);	
+			driver.get("https://stackoverflow.com/questions/9169249/why-we-use-if-else-if-instead-of-multiple-if-block-if-the-body-is-a-return-stat");
+			
+			
+		} 
+		else if (Edgebrowser.equals(driver2)) { 
+			Thread.sleep(1000);	
+			driver.manage().window().maximize(); 
+			Thread.sleep(1000);	
+			driver.get("https://www.facebook.com/");
+			
+			
+		}
+		
+	}
+}

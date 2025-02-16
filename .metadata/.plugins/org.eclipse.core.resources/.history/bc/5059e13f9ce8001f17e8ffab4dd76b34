@@ -1,0 +1,27 @@
+package Thirdclass;
+
+public class Thirdclass { 
+	
+	public static void main(String[] args) { 
+
+		Thirdclass sc=new Thirdclass();
+		sc.add(10, 20); 
+		sc.sub(20, 10);
+		sc.multply(10,20);
+	}  
+	
+  void add(int a, int b) {
+		System.out.println(a+b);
+	} 
+	
+ void sub(int a, int b) { 
+	 System.out.println(a-b);
+		 
+	}
+ void multply(int a, int b) { 
+	 System.out.println(a*b);
+		 
+	}
+
+
+}

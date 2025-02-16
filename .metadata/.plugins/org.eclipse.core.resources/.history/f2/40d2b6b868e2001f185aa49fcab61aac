@@ -1,0 +1,42 @@
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class NewTest { 
+    WebDriver driver; // Class-level WebDriver
+
+    @BeforeClass
+    public void beforeClass() { 
+        // Set up ChromeDriver using WebDriverManager
+        WebDriverManager.chromedriver().setup();
+        
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        
+        // Navigate to Flipkart
+        driver.get("https://www.flipkart.com/");
+    } 
+
+    @Test(priority = 1)
+    public void testExample() throws InterruptedException {   
+        // Your test logic goes here
+        System.out.println("Flipkart page title: " + driver.getTitle());  
+        Thread.sleep(10000);
+        WebElement Searchelement=driver.findElement(By.className("//a[@href='/searchsuggestion']")); 
+        Thread.sleep(1000); 
+        Searchelement.sendKeys("mobile"); 
+        System.out.println("Driver title"+driver.getTitle());
+    }
+
+    @AfterClass
+    public void afterClass() { 
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+}

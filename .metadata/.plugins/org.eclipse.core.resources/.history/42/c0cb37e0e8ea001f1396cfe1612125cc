@@ -1,0 +1,42 @@
+package Thirdclass;
+
+import java.util.Scanner;
+
+public class fivthclass {
+	
+	public static void main(String[] args) {
+		
+		fivthclass cls=new fivthclass(); 
+		//cls.facorialnumber(); 
+		cls.amastrongofnumber();
+        
+	}
+	 /*void facorialnumber() {  
+		 Scanner sc=new Scanner(System.in);
+		 System.out.println("Enter your factorial of number "); 
+		 int a=sc.nextInt();
+		int fact=1;
+		for(int i=1; i<=a; i++)
+		{
+			 fact=fact*i;
+		} 
+		System.out.println(fact);
+			
+		}  
+		*/
+	 void amastrongofnumber()
+	 {   
+//		 //System.out.println("hello world enter into amastrongnumber"); 
+//		 Scanner sc=new Scanner(System.in);
+//		 //System.out.println("Enter your factorial of number "); 
+//		 int b=sc.nextInt();  
+		 double result1 = Math.pow(2, 3);  // 2^3 = 8
+	        double result2 = Math.pow(5, 2);  // 5^2 = 25
+	        double result3 = Math.pow(10, 0); // Any number to power 0 is 1
+
+	        System.out.println("2^3 = " + result1);
+	        System.out.println("5^2 = " + result2);
+	        System.out.println("10^0 = " + result3);
+		 
+	 }
+}

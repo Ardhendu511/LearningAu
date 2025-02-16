@@ -1,0 +1,76 @@
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+
+import static org.testng.Assert.assertFalse;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class NewTest { 
+    WebDriver driver; // Class-level WebDriver
+
+    @BeforeClass
+    public void beforeClass() { 
+        // Set up ChromeDriver using WebDriverManager
+        WebDriverManager.chromedriver().setup();
+        
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        
+        // Navigate to Flipkart
+        //driver.get("https://www.flipkart.com/");
+    } 
+     
+    //@Test(priority = 1)
+    public void testSearchmobile() throws InterruptedException {   
+        // Your test logic goes here
+        System.out.println("Flipkart page title: " + driver.getTitle());  
+        Thread.sleep(1000);
+        WebElement Searchelement=driver.findElement(By.xpath("//div[@class='_2SmNnR']//input[@class='Pke_EE']")); 
+        Thread.sleep(500); 
+        Searchelement.sendKeys("Mobile"+ Keys.ENTER);   
+        Thread.sleep(1000);
+       
+    } 
+    @Test(priority = 2)
+    public void dropdownvalue() throws InterruptedException
+    {  
+    	driver.navigate().to("https://www.flipkart.com/search?q=mobile&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&p%5B%5D=facets.price_range.from%3D10000&p%5B%5D=facets.price_range.to%3D20000&p%5B%5D=facets.brand%255B%255D%3DSAMSUNG");
+    	 Thread.sleep(1000); 
+    	 
+    	 List<WebElement> clearElements = driver.findElements(By.xpath("//div[@class='aOfogh']//span"));
+    	 Thread.sleep(1000); 
+           if(!clearElements.isEmpty())
+           { 
+        	   Thread.sleep(1000); 
+        	  WebElement taponclearElement=clearElements.get(0);
+        	  taponclearElement.click(); 
+        	  Thread.sleep(7000); 
+        	 		  
+           } 
+           else {
+        	    System.out.println("I didnot find element");
+           } 
+          //Choose drop-down value from price range \ 
+           Thread.sleep(1000);
+           WebElement dropdownclick=driver.findElement(By.xpath("//div[@class='suthUA']//select"));
+           dropdownclick.click(); 
+           Thread.sleep(1000);
+           
+           
+    }
+
+    @AfterClass
+    public void afterClass() { 
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+}

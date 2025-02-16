@@ -1,0 +1,22 @@
+package Basicprogramm123;
+
+import java.util.Scanner;
+
+public class Basicprogramm1234 {
+
+	public static void main(String[] args) {   
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter a number"); 
+		int n=sc.nextInt();
+//		int n=1;
+		switch (n) {
+		case 1: {
+			
+			System.out.println("dhfgdf");
+		}
+		default:
+			System.out.println("dgf");
+		}
+		
+	}
+}

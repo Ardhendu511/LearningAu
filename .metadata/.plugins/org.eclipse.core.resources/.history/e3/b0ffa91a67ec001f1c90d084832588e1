@@ -1,0 +1,17 @@
+package Basicprogramm123;
+
+import java.util.Scanner;
+
+public class Basicprogramm1234 {
+
+	public static void main(String[] args) {  
+		int a = 10;
+
+        int b = ++a;
+
+        // This is change made in above program
+        // which reflects error during compilation
+        System.out.println(b);
+		
+	}
+}

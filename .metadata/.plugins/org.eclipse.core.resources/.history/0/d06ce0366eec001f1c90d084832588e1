@@ -1,0 +1,46 @@
+package Basicprogramm123;
+
+import java.util.Scanner;
+
+public class Basicprogramm1234 {
+
+	public static void main(String[] args) {   
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter day");
+		int a=sc.nextInt();
+		 switch (a) {
+		case 1: {
+			
+			System.out.print("hi first number");  
+			if(10>9) 
+			{
+				 System.out.println("I am inside the loop");
+			}
+			break;
+		}
+		case 2:{
+			 System.out.println("Today is monday"); 
+			 break;
+		}
+	
+		case 3:{
+			System.out.println("Today is Thuesaday"); 
+			break;
+		} 
+		case 4:{
+			System.out.println("Today is Thuesaday"); 
+			break;
+		} 
+		case 5:{
+			System.out.println("Today is Thuesaday"); 
+			break;
+		} 
+		case 6:{
+			System.out.println("Today is Thuesaday"); 
+			break;
+		}
+		default:
+			System.out.print("I am in exiting from loop");
+		}
+		 }
+}

@@ -1,0 +1,15 @@
+package Basicprogramm123;
+
+import java.util.Scanner;
+
+public class Basicprogramm1234 {
+
+	public static void main(String[] args) {  
+		int A = 5;
+	      int B = 7;
+	      
+	      int C = ++A + B;  
+	      System.out.println(C);
+		
+	}
+}

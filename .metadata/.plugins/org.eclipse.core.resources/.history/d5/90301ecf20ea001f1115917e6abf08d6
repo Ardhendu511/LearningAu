@@ -1,0 +1,16 @@
+package Fivthclass_forloop_whileloop1;
+
+import java.util.Scanner;
+
+public class fivthclass_forloop_whileloop {
+
+	public static void main(String[] args) {
+		//Scanner scanner = new Scanner(System.in); 
+		int age=27; 
+		System.out.println(age);
+		
+
+
+	}
+
+}

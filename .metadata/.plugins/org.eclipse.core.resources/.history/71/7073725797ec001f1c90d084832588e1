@@ -1,0 +1,9 @@
+
+public class parentclass extends NewTest{
+
+	public static void main(String[] args) {
+		System.out.println(" hello world");
+
+	}
+
+}

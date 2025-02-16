@@ -1,0 +1,58 @@
+package Fivthclass_forloop_whileloop1;
+
+import java.util.Scanner;
+
+public class fivthclass_forloop_whileloop {
+
+	public static void main(String[] args) {
+      //1,7-2times 
+		//0, 7-1 times is primenumber 
+//		int primenumber=3; 
+//		 int count=0;
+//		 for(int i=1; i<1; i++)
+//		 {
+// 
+//			 System.out.println("hi");
+//			 	 
+//		 }   
+//		 System.out.println("hi");
+//		 System.out.println("hi"); 
+//		 System.out.println("hi");
+//		 System.out.println("hi");
+//		 System.out.println("hi");
+//		 System.out.println("hi");
+//		 System.out.println("hi");
+//		 System.out.println("hi");
+//		 if(count==2)
+//		 {
+//			  System.out.print(" this is prime number");
+//		 } 
+//		 else {
+//			  System.out.print("Not a prime number");
+//		 } 
+		//1,2,3,4,5,6,7,8,9,10 
+		int number=10; 
+		   //0  0<10  i++ each time value will inc
+		for(int i=8; i<=number; )
+		{
+			 System.out.println(i); 
+			 i++;
+			 continue;
+			 //i++;
+			 
+		}  
+		
+		
+		
+		
+		
+
+
+	}
+
+	private static void While(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

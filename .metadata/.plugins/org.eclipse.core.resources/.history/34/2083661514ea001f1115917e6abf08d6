@@ -1,0 +1,11 @@
+package Fivthclass_forloop_whileloop1;
+
+public class fivthclass_forloop_whileloop {
+
+	public static void main(String[] args) {
+		int a=-1;
+		System.out.print(a);
+
+	}
+
+}

@@ -1,0 +1,36 @@
+package Fivthclass_forloop_whileloop1;
+
+import java.util.Scanner;
+
+public class fivthclass_forloop_whileloop {
+
+	public static void main(String[] args) {
+//		Scanner sc= new Scanner(System.in);  
+//		System.out.println("Enter first integer number"); 
+//		int a=sc.nextInt(); 
+//		System.out.println("Enter Second number"); 
+//		int b=sc.nextInt();
+//		System.out.println("Enter Third number");
+//		int c=sc.nextInt(); 
+		int a=10;
+		int b=20;
+		int c=30;
+		if(a>b&&a>c) {
+			System.out.println("i am in first loop");
+			 
+		}
+		else {
+			 System.out.print("i am inside the loop");
+		}
+		//30
+		//1,3,2
+		//3
+	//-5,2,4
+		//4
+		
+		
+
+
+	}
+
+}

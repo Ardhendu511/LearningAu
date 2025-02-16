@@ -1,0 +1,16 @@
+package Basicprogramm123;
+
+import java.util.Scanner;
+
+public class Basicprogramm1234 {
+
+	public static void main(String[] args) {   
+		
+		Basicprogramm1234 k1=new Basicprogramm1234();
+		k1.r1();
+		    		       
+		    }  
+	public void r1() {
+		System.out.println("How it is working");
+	}
+}

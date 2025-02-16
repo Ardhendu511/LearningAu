@@ -1,0 +1,47 @@
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+
+import static org.testng.Assert.assertFalse;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.List;
+import java.util.Properties;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import net.bytebuddy.utility.dispatcher.JavaDispatcher.Container; 
+
+
+public class NewTest extends configfile {   
+	
+ 
+    WebDriver driver; // Class-level WebDriver
+
+    @SuppressWarnings("deprecation")
+	@BeforeClass
+    public void beforeClass() throws IOException {   
+        WebDriverManager.chromedriver().setup(); 
+        driver = new ChromeDriver();
+        driver.manage().window().maximize(); 
+        String url = configfile.getProperty("mainurl");  
+        System.out.println(url);
+        driver.get(url); 
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+    }   
+    @AfterClass
+    public void afterClass() { 
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+}

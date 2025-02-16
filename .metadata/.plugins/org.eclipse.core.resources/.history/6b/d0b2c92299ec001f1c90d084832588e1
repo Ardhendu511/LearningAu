@@ -1,0 +1,158 @@
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+
+import static org.testng.Assert.assertFalse;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.List;
+import java.util.Properties;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import net.bytebuddy.utility.dispatcher.JavaDispatcher.Container; 
+
+
+public class NewTest extends configfile {   
+	
+ 
+    WebDriver driver; // Class-level WebDriver 
+    
+
+    @SuppressWarnings("deprecation")
+	@BeforeClass
+    public void beforeClass() throws IOException {   
+        WebDriverManager.chromedriver().setup(); 
+        driver = new ChromeDriver();
+        driver.manage().window().maximize(); 
+        String url = configfile.getProperty("mainurl");  
+        System.out.println(url);
+        driver.get(url); 
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60)); 
+        String url1=""; 
+    }    
+    public class childtesting extends NewTest {  
+   	 String url="";   
+   	 @Test(priority = 1)
+       public void testSearchmobile() throws InterruptedException {     
+   		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(80));
+           WebElement Searchelement=driver.findElement(By.xpath("searchmobile"));   
+           Searchelement.sendKeys("Mobile"+ Keys.ENTER);   
+           String getcurrenturl=driver.getCurrentUrl();   
+           String url1=getcurrenturl;
+
+       } 
+       @Test(priority = 2)
+       public void dropdownvalue() throws InterruptedException
+       {  
+       	//driver.navigate().to("getcurrenturl");
+       	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(80));
+//       	 List<WebElement> clearElements = driver.findElements(By.xpath("//div[@class='aOfogh']//span")); 
+//              if(!clearElements.isEmpty())
+//              {   
+//           	  WebElement taponclearElement=clearElements.get(0);
+//           	  taponclearElement.click();  		  
+//              } 
+//              else {
+//           	    System.out.println("I didnot find element");
+//              } 
+              WebElement dropdownclick=driver.findElement(By.xpath("//div[@class='suthUA']//select"));
+              dropdownclick.click();  
+              List<WebElement>dropdownvalue=dropdownclick.findElements(By.tagName("option"));
+              for(int i=0; i<dropdownvalue.size(); i++)
+              { 
+           	    dropdownvalue.get(0).click();    
+              }  
+              WebElement dropdownclick1=driver.findElement(By.xpath("//div[@class='tKgS7w']//select"));
+              dropdownclick1.click(); 
+              List<WebElement>dropdownvalue2=dropdownclick1.findElements(By.tagName("option"));  
+              for(int i=0; i<dropdownvalue2.size(); i++)
+              {
+           	   dropdownvalue2.get(0).click();   
+              }
+              WebElement searchelement=driver.findElement(By.xpath("//div[@class='Cj5b5T']//input[@type='text']")); 
+              searchelement.sendKeys("Samsung"+Keys.ENTER);
+              WebElement tapsamsung=driver.findElement(By.xpath("//div[@title='SAMSUNG']"));
+              tapsamsung.click(); 
+              Assert.assertEquals("https://www.flipkart.com/search?q=mobile&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&p%5B%5D=facets.price_range.from%3D10000&p%5B%5D=facets.price_range.to%3D20000&p%5B%5D=facets.brand%255B%255D%3DSAMSUNG", "https://www.flipkart.com/search?q=mobile&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&p%5B%5D=facets.price_range.from%3D10000&p%5B%5D=facets.price_range.to%3D20000&p%5B%5D=facets.brand%255B%255D%3DSAMSUNG"); 
+              System.out.println("Test cases is working as excepted"); 
+              
+       }
+       @Test(priority = 3)
+       public void clickproduct() throws InterruptedException
+       { 
+       	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));  
+       	WebElement tapmobile=driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[3]/div/div[2]/div[2]/div/div/div/a/div[3]/div[1]/div[1]")); 
+       	Thread.sleep(1000);
+       	tapmobile.click();
+       	System.out.println(driver.getTitle());
+       	System.out.println(" I have reach here");
+       	  String mainWindow = driver.getWindowHandle();
+       	    Set<String> allWindows = driver.getWindowHandles();
+       	    for (String window : allWindows) { 
+       	    	
+       	        if (!window.equals(mainWindow)) { 
+       	        	Thread.sleep(1000);
+       	        	
+       	            driver.switchTo().window(window); 
+       	            Thread.sleep(1000);
+       	            break;
+       	        }
+       	    }
+       	    
+       	    List<WebElement> listproduct=driver.findElements(By.xpath("//ul[@class='ZqtVYK']//li")); 
+       	    
+       	    System.out.println("All the list value is"+listproduct.size());  
+       	    
+       	    for(int i=0; i<listproduct.size(); i++)
+       	    { 
+       	    	
+       	    	 listproduct.get(i).click(); 
+       	    	
+       	    	 if(i==4) {  
+       	    		 Thread.sleep(1000);
+       	    		 WebElement Clickdropvalue=driver.findElement(By.xpath("//div[@class='B-Odya _6gf9Ot']")); 
+       	    		 Thread.sleep(1000);
+       	    		 Clickdropvalue.click();
+       	    	 }
+       	    }  
+       	    JavascriptExecutor js = (JavascriptExecutor) driver;
+
+               // Scroll down by 300 pixels
+               js.executeScript("window.scrollBy(0,300)");
+       	    WebElement addtocart=driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[3]/div[1]/div[1]/div[2]/div/ul/li[1]/button"));
+       	    addtocart.click(); 
+//       	    driver.navigate().back(); 
+       	    
+       	    
+       }  
+       @Test(priority = 4)
+       public void homepage() throws InterruptedException
+       {  
+       	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));  
+       	Thread.sleep(1000);
+       	WebElement Additem=driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[2]/div/div/div[1]/div/div[3]/div/form/button"));  
+       	Additem.click();
+       	Thread.sleep(1000);
+           System.out.print("I have reach here");  
+       }
+
+   }
+
+    @AfterClass
+    public void afterClass() { 
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+}

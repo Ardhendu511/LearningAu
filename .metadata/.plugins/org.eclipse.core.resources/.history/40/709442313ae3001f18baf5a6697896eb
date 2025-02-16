@@ -1,0 +1,159 @@
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+
+import static org.testng.Assert.assertFalse;
+
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class NewTest { 
+    WebDriver driver; // Class-level WebDriver
+
+  
+    import org.testng.annotations.Test;
+    import org.testng.annotations.BeforeClass;
+    import org.testng.Assert;
+    import org.testng.annotations.AfterClass;
+
+    import java.util.List;
+    import java.util.Set;
+    import java.util.Iterator;
+
+    import org.openqa.selenium.By;
+    import org.openqa.selenium.Keys;
+    import org.openqa.selenium.WebDriver;
+    import org.openqa.selenium.WebElement;
+    import org.openqa.selenium.chrome.ChromeDriver;
+    import io.github.bonigarcia.wdm.WebDriverManager;
+
+    public class FlipkartTest {
+        WebDriver driver;
+
+        @BeforeClass
+        public void beforeClass() { 
+            // Set up ChromeDriver using WebDriverManager
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+            driver.manage().window().maximize();
+            
+            // Navigate to Flipkart
+            driver.get("https://www.flipkart.com/");
+        } 
+
+        @Test(priority = 1)
+        public void testSearchMobile() throws InterruptedException {   
+            System.out.println("Flipkart page title: " + driver.getTitle());  
+            Thread.sleep(1000);
+            
+            // Search for Mobile
+            WebElement searchElement = driver.findElement(By.xpath("//input[contains(@title,'Search for products')]"));
+            searchElement.sendKeys("Mobile" + Keys.ENTER);
+            Thread.sleep(2000);
+        } 
+
+        @Test(priority = 2)
+        public void filterDropdownValue() throws InterruptedException {  
+            driver.navigate().to("https://www.flipkart.com/search?q=mobile&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&p%5B%5D=facets.price_range.from%3D10000&p%5B%5D=facets.price_range.to%3D20000&p%5B%5D=facets.brand%255B%255D%3DSAMSUNG");
+            Thread.sleep(2000); 
+            
+            // Clear any existing filters
+            List<WebElement> clearElements = driver.findElements(By.xpath("//div[@class='aOfogh']//span"));
+            if (!clearElements.isEmpty()) { 
+                clearElements.get(0).click(); 
+                Thread.sleep(3000); 
+            } 
+            
+            // Select dropdown values for price filter
+            WebElement minPriceDropdown = driver.findElement(By.xpath("//div[@class='suthUA']//select"));
+            minPriceDropdown.click(); 
+            Thread.sleep(1000);
+            minPriceDropdown.findElements(By.tagName("option")).get(1).click(); // Select second option
+
+            WebElement maxPriceDropdown = driver.findElement(By.xpath("//div[@class='tKgS7w']//select"));
+            maxPriceDropdown.click(); 
+            Thread.sleep(1000);
+            maxPriceDropdown.findElements(By.tagName("option")).get(1).click(); // Select second option
+            
+            // Apply Samsung brand filter
+            WebElement searchBrandElement = driver.findElement(By.xpath("//div[@class='Cj5b5T']//input[@type='text']"));
+            searchBrandElement.sendKeys("Samsung" + Keys.ENTER);
+            Thread.sleep(2000);
+            WebElement samsungBrandFilter = driver.findElement(By.xpath("//div[@title='SAMSUNG']"));
+            samsungBrandFilter.click();
+            Thread.sleep(2000);
+
+            // Verify correct URL after applying filters
+            Assert.assertEquals(driver.getCurrentUrl(), "https://www.flipkart.com/search?q=mobile&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off&p%5B%5D=facets.price_range.from%3D10000&p%5B%5D=facets.price_range.to%3D20000&p%5B%5D=facets.brand%255B%255D%3DSAMSUNG");
+            System.out.println("Test case passed: Filters applied correctly");
+        }
+
+        @Test(priority = 3)
+        public void clickProductAndAddToCart() throws InterruptedException {
+            Thread.sleep(2000);
+
+            // Click on the first mobile product (opens in new tab)
+            WebElement product = driver.findElement(By.xpath("//div[@class='_4rR01T']"));
+            product.click();
+            Thread.sleep(3000);
+
+            // Store the main window handle
+            String mainWindow = driver.getWindowHandle();
+            Set<String> allWindows = driver.getWindowHandles();
+
+            // Switch to the new window
+            for (String window : allWindows) { 
+                if (!window.equals(mainWindow)) { 
+                    driver.switchTo().window(window);
+                    break;
+                }
+            }
+
+            // Perform actions in the new window
+            System.out.println("New Tab Title: " + driver.getTitle());
+
+            // Click on specifications (if exists)
+            List<WebElement> specsList = driver.findElements(By.xpath("//ul[@class='ZqtVYK']//li"));
+            System.out.println("All the list values: " + specsList.size());
+
+            for (WebElement spec : specsList) {
+                spec.click();
+                Thread.sleep(1000);
+            }
+
+            // Click Add to Cart
+            WebElement addToCart = driver.findElement(By.xpath("//button[contains(text(),'Add to Cart')]"));
+            addToCart.click();
+            Thread.sleep(2000);
+
+            // Close the product tab and switch back to the main window
+            driver.close();
+            driver.switchTo().window(mainWindow);
+            Thread.sleep(2000);
+        }
+
+        @Test(priority = 4)
+        public void verifyHomePage() {
+            // Verify we are still on the Flipkart home page
+            Assert.assertTrue(driver.getCurrentUrl().contains("flipkart.com"));
+            System.out.println("Test Passed: Navigated back to Flipkart Home Page");
+        }
+
+        @AfterClass
+        public void afterClass() { 
+            if (driver != null) {
+                driver.quit();
+            }
+        }
+    }
+    	 
+    	    
+}

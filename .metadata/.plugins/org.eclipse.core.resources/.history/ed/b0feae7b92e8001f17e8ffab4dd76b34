@@ -1,0 +1,26 @@
+package Firstclass;
+
+import java.util.Scanner;
+
+public class Firstclass {
+
+	 public static void main(String[] args) { 
+		 int a=5;
+		 if(a%5==0)
+		 {
+			System.out.println("even");
+		 } 
+		 else {
+			  System.out.print("odd");
+		 }
+		
+	
+	 }
+} 
+ 
+2|5|2
+ 4
+ 1
+
+
+

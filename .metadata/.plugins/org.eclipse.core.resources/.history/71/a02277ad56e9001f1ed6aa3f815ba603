@@ -1,0 +1,30 @@
+package Firstclass;
+
+import java.util.Scanner;
+
+public class Firstclass {
+
+	 public static void main(String[] args) { 
+	
+//		 Scanner sc=new Scanner(System.in);
+//		 System.out.println("Enter your age"); 
+//		 int number=sc.nextInt();
+
+		 int a = 3;
+			int b = 3;
+			int c =1;
+			while(b!=0)
+			{
+				c*=a;
+				b--;
+			}
+		
+		  
+	 }
+
+
+} 
+
+
+
+

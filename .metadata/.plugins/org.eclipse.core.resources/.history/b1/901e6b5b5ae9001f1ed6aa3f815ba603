@@ -1,0 +1,51 @@
+package Firstclass;
+
+import java.util.Scanner;
+
+public class Firstclass {
+
+	 public static void main(String[] args) { 
+	
+//		 Scanner sc=new Scanner(System.in);
+//		 System.out.println("Enter your age"); 
+//		 int number=sc.nextInt();
+
+//		 int a = 3;
+//			int b = 3;
+//			int results =1;
+//			while(number>=0)
+//			{
+//				results=results*number;  
+//				
+//				break;
+//				
+//				
+//			} 
+			//System.out.println(results); 
+			//System.out.println(results);
+		 
+		 //1234
+		 //While loop 
+		 // swap two number 
+		 int a=10;  //20
+		 int b=20; //10
+		 //10+20=30
+		 //30-10=20
+		 //30-20=10
+		 //output b=20, a=10
+		 int c=a+b;
+		 System.out.println(c); 
+		  b=c-a;
+		  System.out.println(b); 
+		  a=c-b;
+		  System.out.println(a);
+		 
+		  
+	 }
+
+
+} 
+
+
+
+

@@ -1,0 +1,45 @@
+package amaonone;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class amazon {  
+	//@SuppressWarnings("unlikely-arg-type")
+	@Test(priority=1)
+	public void browserlucnh() throws InterruptedException {  
+		try {
+		ChromeDriver  driver=new ChromeDriver(); 
+		FirefoxDriver driver2=new FirefoxDriver(); 
+		EdgeDriver driver3=new EdgeDriver();
+		if(driver.equals("ChromeDriver")) 
+		{
+			 driver.get("https://reqres.in/api/users/4"); 
+			 Thread.sleep(10000);
+		} 
+		else if (driver2.equals("FirefoxDriver")) { 
+			driver.get("https://fb.com/"); 
+			Thread.sleep(1000);
+			
+		} 
+		else if (driver2.equals("EdgeDriver")) { 
+			Thread.sleep(1000); 
+			driver.get("https://fb.com/"); 
+			
+		} {
+			
+		}
+		}
+		
+		
+		catch (Exception e) {
+			System.out.print(e);
+		}
+	    
+		
+			
+		}
+		
+	
+}

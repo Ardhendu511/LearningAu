@@ -1,0 +1,43 @@
+package Thirdclass;
+
+import java.util.Scanner;
+
+public class fivthclass {
+	
+	public static void main(String[] args) {
+		
+		fivthclass cls=new fivthclass(); 
+		//cls.facorialnumber(); 
+		cls.amastrongofnumber();
+        
+	}
+	 /*void facorialnumber() {  
+		 Scanner sc=new Scanner(System.in);
+		 System.out.println("Enter your factorial of number "); 
+		 int a=sc.nextInt();
+		int fact=1;
+		for(int i=1; i<=a; i++)
+		{
+			 fact=fact*i;
+		} 
+		System.out.println(fact);
+			
+		}  
+		*/
+	 void amastrongofnumber()
+	 {   
+//		 //System.out.println("hello world enter into amastrongnumber"); 
+//		 Scanner sc=new Scanner(System.in);
+//		 //System.out.println("Enter your factorial of number "); 
+//		 int b=sc.nextInt();   
+		 int originalNumber = 123, sum = 0;
+	       // int numDigits = String.valueOf(number).length();
+	        
+	        while (originalNumber > 0) {
+	            int digit = originalNumber % 10;
+	            sum += Math.pow(digit, 3);
+	            originalNumber /= 10;
+	        } 
+	        System.out.print(sum);
+	 }
+}

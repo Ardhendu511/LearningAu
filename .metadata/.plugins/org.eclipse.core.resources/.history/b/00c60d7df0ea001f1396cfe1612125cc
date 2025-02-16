@@ -1,0 +1,38 @@
+package Thirdclass;
+
+public class ifelseelseif {
+
+	public static void main(String[] args) {
+		ifelseelseif k1=new ifelseelseif();
+		k1.factorialnumber();
+     
+
+	} 
+	public void factorialnumber()
+	{  
+		
+		//5!=5*4*3*2*1=120
+		//6!=6*5*4*3*2*1=720
+		System.out.println("program started"); 
+		int number=5; 
+		 int facorialnumber=1;
+		for(int i=1; i<number; i++)
+		{
+			facorialnumber=facorialnumber*i; //secondloop= i=2, 1*2 =2 , i=3 =2*3=6, i=4, facoriail 6*4=24 , i=5*24=120
+		} 
+		System.out.print(facorialnumber);
+	} 
+	public void amstrongnumber()
+	{
+		 System.out.print("hjfds");
+	} 
+	public void leap()
+	{
+		System.out.print("leap year");
+	} 
+	public void reversednumber()
+	{
+		System.out.print("leap year");
+	}
+
+}

@@ -1,0 +1,28 @@
+package Thirdclass;
+
+public class ifelseelseif {
+
+	public static void main(String[] args) {
+		ifelseelseif k1=new ifelseelseif();
+		k1.factorialnumber();
+     
+
+	} 
+	public void factorialnumber()
+	{
+		System.out.println("factorialnumber");
+	} 
+	public void amstrongnumber()
+	{
+		 System.out.print("hjfds");
+	} 
+	public void leap()
+	{
+		System.out.print("leap year");
+	} 
+	public void reversednumber()
+	{
+		System.out.print("leap year");
+	}
+
+}

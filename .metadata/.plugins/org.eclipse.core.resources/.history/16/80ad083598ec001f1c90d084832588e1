@@ -1,0 +1,12 @@
+package mainclass123;
+
+public class mainclass123{
+
+	public static void main(String[] args) { 
+		mainclass123 k1=new mainclass123();
+		k1.NewTest();
+		
+
+	}
+
+}

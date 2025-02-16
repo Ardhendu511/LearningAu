@@ -1,0 +1,14 @@
+package Basicprogramm123;
+
+import java.util.Scanner;
+
+public class Basicprogramm1234 {
+
+	public static void main(String[] args) {  
+		int m = 1, n = 2;
+	      
+	      int o = m++ + n + ++m; //1+2+2
+	      System.out.println(o);
+		
+	}
+}

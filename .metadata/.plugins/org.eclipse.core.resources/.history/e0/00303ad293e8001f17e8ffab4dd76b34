@@ -1,0 +1,36 @@
+package Firstclass;
+
+import java.util.Scanner;
+
+public class Firstclass {
+
+	 public static void main(String[] args) { 
+		String h="hello"; 
+		String j="";
+		System.out.println(h.length()); 
+		for(int i=h.length()-1; i>=0; i--)
+		{
+			 char ch=h.charAt(i);  
+			 j=j+ch;
+			 
+			 
+		} 
+		System.out.print(j);
+		
+		
+	
+	 }
+} 
+ 
+//2|5|2
+// 4
+// 1 
+// 5|5|1 
+// 2|48|24
+//  48
+//   0
+//   5
+//   0
+
+
+

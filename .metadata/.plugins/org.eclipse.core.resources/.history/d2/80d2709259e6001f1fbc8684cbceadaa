@@ -1,0 +1,32 @@
+package Basicprogramm123;
+
+import java.util.Scanner;
+
+public class Basicprogramm1234 {
+
+	public static void main(String[] args) {  
+		
+		        System.out.println("Hello world Welcome to my world");
+
+		        Scanner sc = new Scanner(System.in); // Create Scanner object
+
+		        System.out.print("Enter first number: ");
+		        int a = sc.nextInt();
+		        System.out.println("First number is = " + a);
+
+		        System.out.print("Enter second number: ");
+		        int b = sc.nextInt();
+		        System.out.println("Second number is = " + b);
+
+		        int c = a + b;
+		        System.out.println("Sum of two numbers is = " + c);
+
+		        System.out.println("Hello world Welcome to my world");
+
+		        sc.close(); // Close the scanner to prevent resource leak
+		    }
+		
+
+	
+
+}

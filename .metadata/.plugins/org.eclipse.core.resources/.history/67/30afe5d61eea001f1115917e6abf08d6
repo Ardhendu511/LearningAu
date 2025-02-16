@@ -1,0 +1,17 @@
+package Fivthclass_forloop_whileloop1;
+
+public class fivthclass_forloop_whileloop {
+
+	public static void main(String[] args) {
+		 int a = -1;
+	        System.out.print(a);
+
+	        if (a == -1) {  // Use a comparison to make it a valid boolean expression
+	            System.out.print("dfhhdf");
+	        } else {
+	            System.out.print("sdfhgdf");
+	        }
+
+	}
+
+}

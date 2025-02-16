@@ -1,0 +1,59 @@
+package Thirdclass;
+
+public class ifelseelseif {
+
+	public static void main(String[] args) {
+		ifelseelseif k1=new ifelseelseif();
+		//k1.factorialnumber(); 
+		k1.amstrongnumber();
+     
+
+	} 
+	public void factorialnumber()
+	{  
+		//5!=5*4*3*2*1=120
+		//6!=6*5*4*3*2*1=720
+		System.out.println("program started"); 
+		int number=5; 
+		 int facorialnumber=1;
+		for(int i=number; i>=1; i--)   
+		{
+			facorialnumber=facorialnumber*i;  //firstloop= 0,secondloop=0
+		} 
+		System.out.print(facorialnumber);
+	} 
+	public void amstrongnumber()
+	{
+		 //int a=123 
+		 // digits over here  3
+		  //1*1*1+2*2*2+3*3*3 1+8+27=35
+	     //121
+		//1*1*1+2*2*2+1*1*1=8 
+		//153
+		//1*1*1+5*5*5+3*3*3=1+125+27=153 
+		int a=123; 
+		int reminder = 1; 
+		double sum=0;
+		while(a>0)
+		{
+		reminder=a%10;   
+		sum=sum+Math.pow(reminder, 3);
+		a=a/10;
+		
+		//System.out.println(sum); 
+		
+			
+		} 
+		System.out.println(sum); 
+		
+	} 
+	public void leap()
+	{
+		System.out.print("leap year");
+	} 
+	public void reversednumber()
+	{
+		System.out.print("leap year");
+	}
+
+}
