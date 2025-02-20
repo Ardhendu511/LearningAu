@@ -1,0 +1,11 @@
+mainurl=https://www.flipkart.com/ 
+searchmobile=//div[@class='_2SmNnR']//input[@class='Pke_EE'] 
+clickdrop-down=//div[@class='suthUA']//select 
+Seconddropdown=//div[@class='tKgS7w']//select
+Samsungproduct=//div[@class='Cj5b5T']//input[@type='text'] 
+mobilevalue=//div[@class='Cj5b5T']//input[@type='text'] 
+choosesamsung=//div[@title='SAMSUNG'] 
+clickonfirstvalue=//*[@id=\"container\"]/div/div[3]/div/div[2]/div[2]/div/div/div/a/div[3]/div[1]/div[1] 
+Listvalue=//ul[@class='ZqtVYK']//li 
+addcarttocard=//*[@id=\"container\"]/div/div[3]/div[1]/div[1]/div[2]/div/ul/li[1]/button 
+Additemvalue=//*[@id=\"container\"]/div/div[2]/div/div/div[1]/div/div[3]/div/form/button
