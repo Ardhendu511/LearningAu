@@ -3,15 +3,11 @@ package Thirdclass;
 public class Staticclass {
 
 	public static void main(String[] args) {
-//		add(10,20); 
+
 		Staticclass ref=new Staticclass(); 
 		
 		ref.sub(10, "Ardhendu"); 
 		
-//		ref.sub(); 
-//		ref.sub1(); 
-//		ref.sub2(10, 65.45f);
-//		ref.sub2(10, 20);
 	}  
 	
 	static void add()
